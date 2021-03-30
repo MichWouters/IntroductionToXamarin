@@ -14,5 +14,13 @@ namespace IntroductionToXamarin
         {
             InitializeComponent();
         }
+
+        private void OnLoginButtonClicked(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtPassword.Text))
+            {
+                Navigation.PushAsync(new MenuPage());
+            }
+        }
     }
 }

@@ -6,12 +6,16 @@
     <StackLayout VerticalOptions="Center"
                  Margin="20">
         <Entry Placeholder="E-mail address"
+               x:Name="txtEmail"
                Keyboard="Email"/>
         
         <Entry Placeholder="Password"
+               x:Name="txtPassword"
                IsPassword="True"/>
         
-        <Button Text="Login"  />
+        <Button Text="Login"
+                Style="{StaticResource SpecialButtonStyle}"
+                Clicked="OnLoginButtonClicked" />
     </StackLayout>
 
 </ContentPage>
