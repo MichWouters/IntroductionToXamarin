@@ -2,11 +2,67 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IntroductionToXamarin.Orders">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="darkColour">#000</Color>
+            <Color x:Key="selectColour">Green</Color>
+            <Color x:Key="redColour">Red</Color>
+            <Color x:Key="buttonColour">Yellow</Color>
+            
+            <Style TargetType="Label" x:Key="BigText">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#000" />
+            </Style>
+
+            <Style TargetType="Label" BasedOn="{StaticResource BigText}" x:Key="PriceStyle">
+                <Setter Property="TextColor" Value="{StaticResource redColour}" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="SelectStyle">
+                <Setter Property="TextColor" Value="{StaticResource selectColour}" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="SelectBorderStyle">
+                <Setter Property="OutlineColor" Value="{StaticResource selectColour}" />
+                <Setter Property="Padding" Value="5" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{OnPlatform Android=Yellow, UWP=Blue }" />
+                <Setter Property="TextColor" Value="{StaticResource }" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Orders!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10"
+                     VerticalOptions="Center">
+
+            <Label Text="39,99" Style="{StaticResource PriceStyle}"/>
+            <Label Text="Google>"/>
+            <Label Text="Google Chromecast 3 Smart - Tv dongle -Full HD / Zwart" Style="{StaticResource BigText}"/>
+            <Label Text="Gemiddelde uit 4,489 beoordelingen"/>
+            
+            <StackLayout Orientation="Horizontal" >
+                <Frame Style="{StaticResource SelectBorderStyle}">
+                    <Label Text="Op voorraad" Style="{StaticResource SelectStyle}"/>
+                </Frame>
+                <Label Text="Select" Style="{StaticResource SelectStyle}"/>
+            </StackLayout>
+            <Label Text="Voor 23:59 besteld, morgen in huis" Style="{StaticResource SelectStyle}" />
+            <Label Text="Verkoop door bol.com" Style="{StaticResource BigText}" />
+
+            <Button Text="In Winkelwagentje" />
+
+            <Label Text="Gratis verzenden door bol.com"/>
+            <Label Text="Ophalen bij een bol.com afhaalpunt mogelijk"/>
+            <Label Text="30 dagen bedenktijd en gratis retourneren"/>
+            <Label Text="Dag en nacht klantenservice"/>
+
+            <Label Text="Andere verkopers(6)" Style="{StaticResource BigText}"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

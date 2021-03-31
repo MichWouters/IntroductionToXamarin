@@ -11,7 +11,7 @@ namespace IntroductionToXamarin
             InitializeComponent();
 
             // Set start up page
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MultiplePeoplePage());
         }
 
         protected override void OnStart()

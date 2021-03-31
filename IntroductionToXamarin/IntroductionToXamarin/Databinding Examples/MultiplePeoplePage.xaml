@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IntroductionToXamarin.MultiplePeoplePage"
+             Title="People">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="MyPeople"
+                            Margin="20"
+                            SelectionMode="Single"                            >
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" 
+                                       ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Entry Text="{Binding Name}" Placeholder="Name" />
+                            <Entry Text="{Binding Address}" Placeholder="Address"/>
+                            <Entry Text="{Binding Age}" Placeholder="Age"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Click me" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

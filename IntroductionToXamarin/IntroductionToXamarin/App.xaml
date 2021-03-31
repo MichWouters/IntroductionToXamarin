@@ -21,6 +21,8 @@
             <Style TargetType="Button" x:Key="SpecialButtonStyle">
                 <Setter Property="BackgroundColor" Value="Red"/>
             </Style>
+            
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
